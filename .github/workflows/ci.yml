@@ -32,9 +32,11 @@ jobs:
         with:
           node-version: 26
           cache: npm
+      # Pinned to the devDependency version: "latest" hits GitHub API rate limits
+      # and newer CLIs reject the [inbucket] section in supabase/config.toml.
       - uses: supabase/setup-cli@v1
         with:
-          version: latest
+          version: 2.122.0
       - run: npm ci
       - name: Start local Supabase
         run: |
