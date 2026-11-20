@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# production secrets for `wrangler secret bulk` — never commit
+.prod.vars
